@@ -10,5 +10,9 @@ int main()
 	int fd;
 
 	fd = open("test.txt", O_RDONLY);
-	printf("%s", get_next_line(fd));
+	for (size_t i = 0; i < 2; i++)
+	{
+		/* code */
+		printf("%s", get_next_line(fd));
+	}
 }
