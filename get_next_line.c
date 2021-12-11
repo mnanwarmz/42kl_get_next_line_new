@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Loop Get Next Line
-// Reads line until end of line
-// Read must use BUFFER_SIZE gw -D BUFFER_SIZE=n
-
 #include "get_next_line.h"
 
 void ft_strjoin_then_delete(char **str, char *buffer)
@@ -22,7 +18,6 @@ void ft_strjoin_then_delete(char **str, char *buffer)
 	temp = ft_strjoin(*str, buffer);
 	ft_strdel(str);
 	*str = temp;
-	// printf("%s \n ", str);
 	return;
 }
 
