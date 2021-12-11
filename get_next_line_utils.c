@@ -6,13 +6,13 @@
 /*   By: azaid <azaid@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 06:25:04 by azaid             #+#    #+#             */
-/*   Updated: 2021/12/09 16:09:41 by azaid            ###   ########.fr       */
+/*   Updated: 2021/12/11 12:13:06 by azaid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char *ft_strdel(char **str)
+char	*ft_strdel(char **str)
 {
 	if (str != NULL && *str != NULL)
 	{
@@ -22,9 +22,9 @@ char *ft_strdel(char **str)
 	return (NULL);
 }
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != (char)c)
@@ -36,9 +36,9 @@ char *ft_strchr(const char *s, int c)
 	return ((char *)&s[i]);
 }
 
-int ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
-	int ret;
+	int	ret;
 
 	ret = 0;
 	while (str[ret] != '\0')
@@ -46,12 +46,12 @@ int ft_strlen(const char *str)
 	return (ret);
 }
 
-char *ft_strdup(char *s1)
+char	*ft_strdup(char *s1)
 {
-	int src_len;
-	char *src;
-	char *cpy;
-	int i;
+	int		src_len;
+	char	*src;
+	char	*cpy;
+	int		i;
 
 	src = (char *)s1;
 	src_len = ft_strlen(src);
@@ -68,12 +68,12 @@ char *ft_strdup(char *s1)
 	return (cpy);
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t total;
-	size_t i;
-	size_t j;
-	char *result;
+	size_t	total;
+	size_t	i;
+	size_t	j;
+	char	*result;
 
 	i = 0;
 	j = 0;

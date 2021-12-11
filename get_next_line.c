@@ -6,25 +6,26 @@
 /*   By: azaid <azaid@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:05:46 by azaid             #+#    #+#             */
-/*   Updated: 2021/12/10 07:04:43 by azaid            ###   ########.fr       */
+/*   Updated: 2021/12/11 12:01:23 by azaid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void ft_strjoin_then_delete(char **str, char *buffer)
+void	ft_strjoin_then_delete(char **str, char *buffer)
 {
-	char *temp;
+	char	*temp;
+
 	temp = ft_strjoin(*str, buffer);
 	ft_strdel(str);
 	*str = temp;
-	return;
+	return ;
 }
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *str;
-	size_t new_len;
+	char	*str;
+	size_t	new_len;
 
 	if (s == NULL)
 		return (NULL);
@@ -40,9 +41,9 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-size_t ft_strlcpy(char *dest, const char *src, size_t dst_size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t dst_size)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (!src || !dest)
@@ -61,11 +62,11 @@ size_t ft_strlcpy(char *dest, const char *src, size_t dst_size)
 	return (i);
 }
 
-char *process_line(int reader, char **str)
+char	*process_line(int reader, char **str)
 {
-	int len;
-	char *tmp;
-	char *str_return;
+	int		len;
+	char	*tmp;
+	char	*str_return;
 
 	if (reader == 0 && **str == '\0')
 	{
@@ -88,11 +89,11 @@ char *process_line(int reader, char **str)
 	return (str_return);
 }
 
-char *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-	static char *line;
-	char buf[BUFFER_SIZE + 1];
-	int reader;
+	static char	*line;
+	char		buf[BUFFER_SIZE + 1];
+	int			reader;
 
 	reader = 1;
 	while (reader)
@@ -106,7 +107,7 @@ char *get_next_line(int fd)
 		else if (line != NULL)
 			ft_strjoin_then_delete(&line, buf);
 		if (ft_strchr(line, '\n'))
-			break;
+			break ;
 	}
 	return (process_line(reader, &line));
 }
